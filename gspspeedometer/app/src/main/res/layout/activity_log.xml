@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#121212"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/logTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:padding="16dp"
+            android:textSize="16sp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/backToMainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ana Sayfaya Dön"
+        android:backgroundTint="#FFC107"
+        android:textColor="#000000"
+        android:layout_margin="12dp" />
+    <Button
+        android:id="@+id/clearLogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kayıtları Temizle"
+        android:layout_below="@id/logTextView"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+</LinearLayout>

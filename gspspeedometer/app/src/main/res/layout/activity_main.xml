@@ -1,75 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
+    android:background="?android:windowBackground"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/speedTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hız: 0.0 km/h"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#FFC107"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/latLngTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Konum: -"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/speedTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp" />
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="24dp" />
 
-    <TextView
-        android:id="@+id/maxSpeedTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Maksimum Hız: 0.00 km/h"
-        android:textSize="20sp"
-        android:textColor="#03DAC5"
-        android:layout_below="@id/latLngTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp" />
+        <TextView
+            android:id="@+id/speedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hız: 0.00 km/h"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?android:textColorPrimary"
+            android:layout_marginTop="16dp" />
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Başla"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#FFC107"
-        android:textColor="#000000" />
+        <TextView
+            android:id="@+id/maxSpeedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maksimum Hız: 0.0 km/h"
+            android:textSize="18sp"
+            android:textColor="?android:textColorSecondary"
+            android:layout_marginTop="8dp" />
 
-    <Button
-        android:id="@+id/settingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ayarlar"
-        android:layout_above="@id/startButton"
-        android:layout_marginBottom="16dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#FFC107"
-        android:textColor="#000000" />
+        <TextView
+            android:id="@+id/latLngTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Konum: -"
+            android:textSize="16sp"
+            android:textColor="?android:textColorPrimary"
+            android:layout_marginTop="8dp" />
 
-    <Button
-        android:id="@+id/logButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kayıtları Görüntüle"
-        android:layout_above="@id/settingsButton"
-        android:layout_marginBottom="16dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="#FFC107"
-        android:textColor="#000000" />
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Başla"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ayarlar"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/logButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kayıtları Görüntüle"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Çıkış Yap"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:padding="12dp" />
+
+    </LinearLayout>
+</ScrollView>

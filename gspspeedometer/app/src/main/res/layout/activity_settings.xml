@@ -1,37 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#121212">
+    android:background="?android:windowBackground">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayarlar"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hız Limiti (km/h):"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="8dp" />
+        android:text="Hız Limiti (km/h)"
+        android:textSize="16sp"
+        android:textColor="?android:textColorPrimary"/>
 
     <EditText
         android:id="@+id/speedLimitInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Örn: 80"
-        android:inputType="numberDecimal"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#AAAAAA"
-        android:backgroundTint="#03DAC5"
-        android:padding="12dp"
-        android:layout_marginBottom="24dp" />
+        android:inputType="number"
+        android:hint="Örnek: 80"
+        android:textColor="?android:textColorPrimary"/>
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kaydet"
-        android:backgroundTint="#03DAC5"
-        android:textColor="#000000"
-        android:padding="12dp" />
+        android:layout_marginTop="12dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@android:color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="16dp"
+        android:background="#CCCCCC" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tema Seçimi"
+        android:textSize="16sp"
+        android:textColor="?android:textColorPrimary"/>
+
+    <Switch
+        android:id="@+id/themeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Karanlık Tema"
+        android:textColor="?android:textColorPrimary"/>
+
 </LinearLayout>

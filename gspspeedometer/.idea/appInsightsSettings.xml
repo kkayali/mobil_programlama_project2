@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.speedometer" />
+                  <option name="mobileSdkAppId" value="1:515802831925:android:5082b8b9386b324930657c" />
+                  <option name="projectId" value="gpsspeedometer-90500" />
+                  <option name="projectNumber" value="515802831925" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

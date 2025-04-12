@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "515802831925",
+    "project_id": "gpsspeedometer-90500",
+    "storage_bucket": "gpsspeedometer-90500.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515802831925:android:5082b8b9386b324930657c",
+        "android_client_info": {
+          "package_name": "com.example.speedometer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW3d-OUUA4zErqNyfNoEmcrQA5HKO6BlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

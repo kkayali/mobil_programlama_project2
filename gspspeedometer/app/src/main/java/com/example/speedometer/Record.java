@@ -1,9 +1,6 @@
 package com.example.speedometer;
 
 import java.util.List;
-import com.example.speedometer.LocationPoint;
-import java.util.List;
-
 
 public class Record {
     public String id;
@@ -14,6 +11,7 @@ public class Record {
     public long timestamp;
     public List<LocationPoint> locations;
 
+    // Firebase için boş constructor
     public Record() {}
 
     public Record(String id, float avg, float max, float dur, float dist, long ts, List<LocationPoint> locs) {
@@ -24,5 +22,18 @@ public class Record {
         this.distance_km = dist;
         this.timestamp = ts;
         this.locations = locs;
+    }
+
+    // (Opsiyonel) Getter örneği:
+    public float getAverage_speed() {
+        return average_speed;
+    }
+
+    public List<LocationPoint> getLocations() {
+        return locations;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
     }
 }

@@ -3,16 +3,16 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
-        maven("https://jitpack.io") // ✅ JitPack burada olmalı
+        maven("https://jitpack.io") // JitPack kullanılıyorsa bu şart
     }
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS) // ✅ Bu önemli!
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
-        maven("https://jitpack.io") // ✅ JitPack burada da olmalı
+        maven("https://jitpack.io")
     }
 }
 

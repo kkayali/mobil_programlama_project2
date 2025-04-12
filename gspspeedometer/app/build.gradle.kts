@@ -1,9 +1,9 @@
-apply(plugin = "com.google.gms.google-services")
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms)
 }
+
+apply(plugin = "com.google.gms.google-services")
 
 android {
     namespace = "com.example.speedometer"
@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.speedometer"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -36,19 +36,23 @@ android {
 }
 
 dependencies {
-    implementation(libs.firebase.auth)
-    implementation(libs.mpandroidchart)
-    implementation("com.google.android.gms:play-services-maps:18.2.0")
-    implementation("com.google.maps.android:android-maps-utils:3.8.2")
-
-
+    // Firebase & Google
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
+    implementation("com.google.android.gms:play-services-maps:19.1.0") // ✅ Maps
+    implementation("com.google.maps.android:android-maps-utils:3.11.2") // ✅ Harita işlemleri
+
+    // MPAndroidChart
+    implementation(libs.mpandroidchart)
+
+    // AndroidX ve Material
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
+    // Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

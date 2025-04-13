@@ -12,6 +12,8 @@ constraintlayout = "2.2.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+playServicesMaps = "19.1.0"
+mapsUtils = "3.11.2"  # Harita işlemleri için yardımcı araçlar
 
 [libraries]
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebase-auth" }
@@ -27,6 +29,8 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+maps-utils = { module = "com.google.maps.android:android-maps-utils", version.ref = "mapsUtils" }  # Maps utilities
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

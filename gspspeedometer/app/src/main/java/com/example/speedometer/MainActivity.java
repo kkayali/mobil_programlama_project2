@@ -13,6 +13,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -110,10 +111,12 @@ public class MainActivity extends AppCompatActivity {
             double lat = location.getLatitude();
             double lng = location.getLongitude();
 
+            // Hız ve konum bilgilerini güncelle
             speedTextView.setText(String.format("Hız: %.2f km/h", speedKmph));
             latLngTextView.setText("Konum: " + lat + ", " + lng);
             updateSpeedometer(speedKmph);
 
+            // Hız limiti kontrolü ve uyarı sesi
             if (speedKmph >= speedLimit) {
                 speedTextView.setTextColor(Color.RED);
                 if (!alertPlayer.isPlaying()) alertPlayer.start();
@@ -122,18 +125,22 @@ public class MainActivity extends AppCompatActivity {
                 if (alertPlayer.isPlaying()) alertPlayer.pause();
             }
 
+            // Maksimum hızı güncelle
             if (speedKmph > maxSpeed) {
                 maxSpeed = speedKmph;
                 maxSpeedTextView.setText(String.format("Maksimum Hız: %.2f km/h", maxSpeed));
             }
 
+            // Mesafe hesaplama
             if (lastLocation != null) {
                 totalDistance += location.distanceTo(lastLocation) / 1000f;
             }
             lastLocation = location;
 
+            // Lokasyonları listeye ekle
             locationsList.add(new LocationPoint(lat, lng));
 
+            // Hız ve konum bilgisini log dosyasına yaz
             try (FileWriter writer = new FileWriter(logFile, true)) {
                 writer.append(String.format("Hız: %.2f - Konum: %.5f, %.5f\n", speedKmph, lat, lng));
             } catch (IOException e) {
@@ -232,7 +239,6 @@ public class MainActivity extends AppCompatActivity {
             prefs.edit().putFloat("speed_limit", speedLimit).apply(); // float olarak tekrar kaydet
         }
     }
-
 
     private void checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)

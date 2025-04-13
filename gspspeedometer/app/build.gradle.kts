@@ -33,7 +33,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    buildToolsVersion = "30.0.3"
+
     buildFeatures {
         viewBinding = true
     }
@@ -48,9 +48,9 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
-    implementation("com.google.android.gms:play-services-maps:19.1.0") // ✅ Maps
-    implementation("com.google.maps.android:android-maps-utils:3.11.2") // ✅ Harita işlemleri
-    implementation (libs.mpandroidchart)
+    implementation(libs.play.services.maps) // ✅ Maps
+    implementation(libs.maps.utils) // ✅ Correctly named maps utils
+
 
     // MPAndroidChart
     implementation(libs.mpandroidchart)

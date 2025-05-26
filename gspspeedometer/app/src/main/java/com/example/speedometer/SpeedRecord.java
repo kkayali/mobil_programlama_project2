@@ -7,7 +7,7 @@ public class SpeedRecord {
     public float maxSpeed;
 
     public SpeedRecord() {
-        // Gerekli boş constructor (Firebase için)
+
     }
 
     public SpeedRecord(float duration, float distance, float averageSpeed, float maxSpeed) {

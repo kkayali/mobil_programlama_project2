@@ -23,7 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Tema tercihini uygula
+
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         boolean darkMode = prefs.getBoolean(DARK_MODE_KEY, false);
         AppCompatDelegate.setDefaultNightMode(
@@ -37,14 +37,14 @@ public class SettingsActivity extends AppCompatActivity {
         saveButton = findViewById(R.id.saveButton);
         themeSwitch = findViewById(R.id.themeSwitch);
 
-        // Kaydedilen hız limiti göster
+
         float savedLimit = prefs.getFloat(SPEED_LIMIT_KEY, 80f);
         speedLimitInput.setText(String.valueOf((int) savedLimit));
 
-        // Tema switch durumu
+
         themeSwitch.setChecked(darkMode);
 
-        // Hız limiti kaydet
+
         saveButton.setOnClickListener(v -> {
             String input = speedLimitInput.getText().toString().trim();
             if (!input.isEmpty()) {
@@ -61,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        // Tema değiştir
+
         themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             prefs.edit().putBoolean(DARK_MODE_KEY, isChecked).apply();
 
@@ -69,7 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
                     isChecked ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
             );
 
-            // Uygulamayı tamamen yeniden başlat
+
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

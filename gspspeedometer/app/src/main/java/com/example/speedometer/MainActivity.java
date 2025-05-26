@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Tema tercihini uygula
+
         SharedPreferences prefs = getSharedPreferences("SpeedometerPrefs", MODE_PRIVATE);
         boolean darkMode = prefs.getBoolean("dark_mode", false);
         AppCompatDelegate.setDefaultNightMode(
@@ -111,12 +111,12 @@ public class MainActivity extends AppCompatActivity {
             double lat = location.getLatitude();
             double lng = location.getLongitude();
 
-            // Hız ve konum bilgilerini güncelle
+
             speedTextView.setText(String.format("Hız: %.2f km/h", speedKmph));
             latLngTextView.setText("Konum: " + lat + ", " + lng);
             updateSpeedometer(speedKmph);
 
-            // Hız limiti kontrolü ve uyarı sesi
+
             if (speedKmph >= speedLimit) {
                 speedTextView.setTextColor(Color.RED);
                 if (!alertPlayer.isPlaying()) alertPlayer.start();
@@ -125,29 +125,29 @@ public class MainActivity extends AppCompatActivity {
                 if (alertPlayer.isPlaying()) alertPlayer.pause();
             }
 
-            // Maksimum hızı güncelle
+
             if (speedKmph > maxSpeed) {
                 maxSpeed = speedKmph;
                 maxSpeedTextView.setText(String.format("Maksimum Hız: %.2f km/h", maxSpeed));
             }
 
-            // Mesafe hesaplama
+
             if (lastLocation != null) {
                 totalDistance += location.distanceTo(lastLocation) / 1000f;
             }
             lastLocation = location;
 
-            // Lokasyonları listeye ekle
+
             locationsList.add(new LocationPoint(lat, lng));
 
-            // Hız ve konum bilgisini log dosyasına yaz
+
             try (FileWriter writer = new FileWriter(logFile, true)) {
                 writer.append(String.format("Hız: %.2f - Konum: %.5f, %.5f\n", speedKmph, lat, lng));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         };
-
+// basla butonu
         startButton.setOnClickListener(v -> {
             if (!isTracking) {
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Takip durduruldu", Toast.LENGTH_SHORT).show();
             }
         });
+//ayarlar
 
         settingsButton.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
         logButton.setOnClickListener(v -> startActivity(new Intent(this, RecordsActivity.class)));
@@ -233,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             speedLimit = prefs.getFloat("speed_limit", 80f);
         } catch (ClassCastException e) {
-            // Eski kaydedilmiş int değeri varsa, güvenli şekilde dönüştür
+
             int intLimit = prefs.getInt("speed_limit", 80);
             speedLimit = (float) intLimit;
             prefs.edit().putFloat("speed_limit", speedLimit).apply(); // float olarak tekrar kaydet

@@ -11,7 +11,7 @@ public class Record {
     public long timestamp;
     public List<LocationPoint> locations;
 
-    // Firebase için boş constructor
+
     public Record() {}
 
     public Record(String id, float avg, float max, float dur, float dist, long ts, List<LocationPoint> locs) {
@@ -24,7 +24,7 @@ public class Record {
         this.locations = locs;
     }
 
-    // (Opsiyonel) Getter örneği:
+    // getter ornegi:
     public float getAverage_speed() {
         return average_speed;
     }

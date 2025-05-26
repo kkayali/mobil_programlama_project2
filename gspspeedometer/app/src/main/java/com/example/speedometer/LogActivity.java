@@ -32,17 +32,15 @@ public class LogActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         });
-
         clearLogButton.setOnClickListener(v -> {
             if (logFile.exists()) {
                 logFile.delete();
-                logTextView.setText("Kayıtlar silindi.");
+                logTextView.setText("Kayıtlar Silindi");
             } else {
-                logTextView.setText("Zaten kayıt yok.");
+                logTextView.setText("Kayıt Yok");
             }
         });
     }
-
     private void loadLogData() {
         if (logFile.exists()) {
             try (FileInputStream fis = new FileInputStream(logFile)) {
@@ -50,11 +48,11 @@ public class LogActivity extends AppCompatActivity {
                 fis.read(data);
                 logTextView.setText(new String(data));
             } catch (IOException e) {
-                logTextView.setText("Veriler okunamadı.");
+                logTextView.setText("Veriler okunamadı");
                 e.printStackTrace();
             }
         } else {
-            logTextView.setText("Henüz kayıtlı veri yok.");
+            logTextView.setText("Henüz kayıtlı veri yok");
         }
     }
 }

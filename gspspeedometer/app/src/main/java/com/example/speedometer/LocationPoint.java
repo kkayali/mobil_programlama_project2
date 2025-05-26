@@ -1,6 +1,6 @@
 package com.example.speedometer;
 
-import java.io.Serializable; // <-- Bu satır eksikti, eklendi.
+import java.io.Serializable;
 
 public class LocationPoint implements Serializable {
     public double latitude;
